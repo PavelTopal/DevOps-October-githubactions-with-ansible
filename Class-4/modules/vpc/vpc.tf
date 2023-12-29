@@ -1,10 +1,8 @@
 resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "default"
+  cidr_block       = var.cidr_block
+  
 
-  tags = {
-    Name = "myVPC"
-  }
+  tags = var.vpc_tags 
 }
 
 resource "aws_route" "main_route" {
@@ -15,36 +13,29 @@ resource "aws_route" "main_route" {
 
 resource "aws_subnet" "subnet1" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.subnet1_cidr_block
 
-  tags = {
-    Name = "Subnet-1"
-  }
+  tags = var.subnet1_tags
 }
 
 
 resource "aws_subnet" "subnet2" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = var.subnet2_cidr_block
 
-  tags = {
-    Name = "Subnet-2"
-  }
+  tags = var.subnet2_tags
 }
 
 resource "aws_subnet" "subnet3" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block = var.subnet3_cidr_block
 
-  tags = {
-    Name = "Subnet-3"
-  }
+  tags = var.subnet3_tags
 }
 
 resource "aws_internet_gateway" "my-internet-gw" {
   vpc_id = aws_vpc.main.id
 
-  tags = {
-    Name = "main"
-  }
+  tags = var.ig_tags
+
 }
