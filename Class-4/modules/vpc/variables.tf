@@ -29,16 +29,6 @@ variable  subnet1_az {
     description = "subnet1 AZ"
 }
 
-variable  subnet2_az {
-    type        = string
-    description = "subnet2 AZ"
-}
-
-variable  subnet2_az {
-    type        = string
-    description = "subnet3 AZ"
-}
-
 variable subnet1_tags {
     type     = map
     default  = {
@@ -50,6 +40,11 @@ variable subnet1_tags {
 variable subnet2_cidr_block {
     type        = string
     description = "CIDR range for subnet2"
+}
+
+variable  subnet2_az {
+    type        = string
+    description = "subnet2 AZ"
 }
 
 
@@ -66,6 +61,11 @@ variable subnet3_cidr_block {
     description = "CIDR range for subnet3"
 }
 
+
+variable  subnet3_az {
+    type        = string
+    description = "subnet3 AZ"
+}
 
 variable subnet3_tags {
     type     = map
