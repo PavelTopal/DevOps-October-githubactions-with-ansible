@@ -14,7 +14,7 @@ resource "aws_route" "main_route" {
 resource "aws_subnet" "subnet1" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.subnet1_cidr_block
-
+  availability_zone = var.subnet1_az
   tags = var.subnet1_tags
 }
 
@@ -22,14 +22,14 @@ resource "aws_subnet" "subnet1" {
 resource "aws_subnet" "subnet2" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.subnet2_cidr_block
-
+  availability_zone = var.subnet2_az
   tags = var.subnet2_tags
 }
 
 resource "aws_subnet" "subnet3" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.subnet3_cidr_block
-
+  availability_zone = var.subnet3_az
   tags = var.subnet3_tags
 }
 
